@@ -10,7 +10,7 @@ import android.widget.FrameLayout;
 
 import com.google.vr.sdk.base.GvrView2;
 import com.iantmeyer.simplar.base.ArApi;
-import com.iantmeyer.simplar.base.Simplar;
+import com.iantmeyer.simplar.base.SimplarApi;
 import com.iantmeyer.simplar.render.ArRenderer;
 import com.iantmeyer.simplar.camera.CameraPermissionCallback;
 
@@ -36,7 +36,7 @@ public class ArView extends FrameLayout {
         GvrView2 gvrView = (GvrView2) this.findViewById(R.id.gvr_view);
         SurfaceView cameraSurfaceView = (SurfaceView) this.findViewById(R.id.camera_surface_view);
 
-        mArApi = new Simplar();
+        mArApi = new SimplarApi();
         mArApi.setGvrView(gvrView);
         mArApi.setCameraSurfaceView(cameraSurfaceView);
     }
