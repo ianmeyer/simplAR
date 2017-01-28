@@ -1,0 +1,3 @@
+include ':app', ':simplar'
+
+project(':simplar').projectDir = new File('../simplar')

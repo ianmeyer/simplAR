@@ -1,10 +1,10 @@
-apply plugin: 'com.android.library'
+apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 25
     buildToolsVersion "25.0.2"
-
     defaultConfig {
+        applicationId "com.iantmeyer.sample.simplar"
         minSdkVersion 23
         targetSdkVersion 25
         versionCode 1
@@ -12,12 +12,17 @@ android {
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
-        release {
+        debug {
             minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt')
+        }
+        release {
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt')
         }
     }
 }
+
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
@@ -26,5 +31,12 @@ dependencies {
     compile 'com.android.support:appcompat-v7:25.1.0'
     testCompile 'junit:junit:4.12'
 
-    compile 'com.google.vr:sdk-base:1.10.0'
+    compile 'com.jakewharton:butterknife:8.4.0'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.4.0'
+
+    debugCompile 'com.squareup.leakcanary:leakcanary-android:1.4'
+    releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.4'
+    testCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.4'
+
+    compile project(path: ':simplar')
 }

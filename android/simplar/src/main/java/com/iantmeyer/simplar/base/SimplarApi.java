@@ -16,15 +16,15 @@ import com.iantmeyer.simplar.render.ArRenderer;
 import java.util.List;
 import java.util.Objects;
 
-public class Simplar implements ArApi {
+public class SimplarApi implements ArApi {
 
-    private static final String TAG = "Simplar";
+    private static final String TAG = "SimplarApi";
 
     private ArRenderManager mRendererManager;
 
     private CameraController mCameraController;
 
-    public Simplar() {
+    public SimplarApi() {
         mRendererManager = new ArRenderManager();
     }
 
